@@ -5,5 +5,3 @@ public abstract class Letra {
 	
 }
 
-//teste
-//teste 2
