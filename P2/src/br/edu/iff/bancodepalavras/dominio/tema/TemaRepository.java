@@ -1,14 +1,16 @@
 package br.edu.iff.bancodepalavras.dominio.tema;
 
+import java.util.List;
+
 import br.edu.iff.repository.RepositoryException;
 
 public interface TemaRepository {
 
     public Tema getPorId(long id);
     
-    public Tema[] getPorNome(String nome);
+    public List<Tema> getPorNome(String nome);
     
-    public Tema[] getTodos();
+    public List<Tema> getTodos();
     
     public void inserir(Tema tema) throws RepositoryException;
     
