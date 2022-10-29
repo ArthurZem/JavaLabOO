@@ -12,6 +12,7 @@ public final class TemaFactoryImpl extends EntityFactory implements TemaFactory{
             soleInstance = 
         }
     }
+    //teste
     
     public static TemaFactoryImpl getSoleInstance() {
         return soleInstance;
