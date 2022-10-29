@@ -1,4 +1,3 @@
-@Entity 
 public interface ObjetoDominio {
     
     public ObjetoDominio();
