@@ -1,10 +1,11 @@
 package br.edu.iff.bancodepalavras.dominio.tema;
 
+import br.edu.iff.repository.Repository;
 import java.util.List;
 
 import br.edu.iff.repository.RepositoryException;
 
-public interface TemaRepository {
+public interface TemaRepository extends Repository {
 
     public Tema getPorId(long id);
     
@@ -18,5 +19,5 @@ public interface TemaRepository {
     
     public void remover(Tema tema) throws RepositoryException;
 
-    Tema getTema(String nome);
+
 }
