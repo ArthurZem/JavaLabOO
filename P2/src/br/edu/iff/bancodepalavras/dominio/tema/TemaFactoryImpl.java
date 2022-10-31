@@ -36,7 +36,7 @@ public final class TemaFactoryImpl extends EntityFactory implements TemaFactory{
         if(getTemaRepository().getPorNome(nome) == null) {
             return Tema.criar(repository.getProximoId(), nome);
         }
-        return getTemaRepository().getPorNome(nome);
+        return (Tema) getTemaRepository().getPorNome(nome);
     }
     
     
