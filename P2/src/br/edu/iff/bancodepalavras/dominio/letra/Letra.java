@@ -1,21 +1,19 @@
 package br.edu.iff.bancodepalavras.dominio.letra;
 
-public abstract class Letra {
+public abstract class Letra implements LetraFactory{
 
 	
     private char codigo;
     
     protected Letra(char codigo) {
-        
+        this.codigo = codigo;
     }
 
     public char getCodigo() {
         return codigo;
     }
 
-    public void exibir(Object context) {
-        
-    }
+    public abstract void exibir(Object context);
     
     public boolean equals(Object o) {
         if (!(o instanceof Letra)) return false;
@@ -29,7 +27,7 @@ public abstract class Letra {
     }
     
     public final String toString() {
-        return null;
+        return "Letra "+ codigo;
         
     }
     

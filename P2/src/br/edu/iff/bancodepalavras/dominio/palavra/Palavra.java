@@ -7,6 +7,8 @@ import br.edu.iff.dominio.ObjetoDominioImpl;
 
 public class Palavra extends ObjetoDominioImpl{
     
+    
+    
     public static void setLetraFactory(LetraFactory factory) {
         
     }
