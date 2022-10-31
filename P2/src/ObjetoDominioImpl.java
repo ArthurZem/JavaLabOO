@@ -1,11 +1,15 @@
-@Entity
-public abstract class ObjetoDominioImpl extends ObjetoDominio {
+public abstract class ObjetoDominioImpl implements ObjetoDominio {
     private long id;
     
-    @Override    
-    public ObjetoDominio(long id) {
+    public ObjetoDominioImpl(long id) {
         this.id = id;
     }
+
+    public long getId() {
+        return id;
+    }
+
+    
     
     
 }

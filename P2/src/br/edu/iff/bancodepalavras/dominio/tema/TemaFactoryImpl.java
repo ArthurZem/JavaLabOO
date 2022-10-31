@@ -1,10 +1,8 @@
 package br.edu.iff.bancodepalavras.dominio.tema;
 
 import br.edu.iff.factory.EntityFactory;
-import br.edu.iff.jogoforca.dominio.jogador.Jogador;
-import br.edu.iff.repository.Repository;
 
-public final class TemaFactoryImpl extends EntityFactory implements TemaFactory{
+public class TemaFactoryImpl extends EntityFactory implements TemaFactory{
 
     private static TemaFactoryImpl soleInstance = null;
     private TemaRepository repository;
@@ -17,6 +15,9 @@ public final class TemaFactoryImpl extends EntityFactory implements TemaFactory{
     
     
     public static TemaFactoryImpl getSoleInstance() {
+        if(soleInstance == null) {
+            throw new RuntimeException("Não há instância criada para retornar!");
+        }
         return soleInstance;
         
     }

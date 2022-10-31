@@ -16,7 +16,7 @@ public class JogadorFactoryImpl extends EntityFactory implements JogadorFactory{
     
     public static JogadorFactoryImpl getSoleInstance() {
         if(soleInstance == null) {
-            soleInstance = new JogadorFactoryImpl(repository);
+           throw new RuntimeException("Não há instância criada para retornar!");
         }
         return soleInstance;
         
