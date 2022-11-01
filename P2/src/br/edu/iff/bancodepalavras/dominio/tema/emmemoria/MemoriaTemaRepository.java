@@ -11,7 +11,7 @@ public class MemoriaTemaRepository implements TemaRepository{
     
     private static MemoriaTemaRepository soleInstance = null;
     
-    private List<Tema> pool = new ArrayList<>();
+    private List<Tema> pool ;
     
     public static MemoriaTemaRepository getSoleInstance(){
         if(soleInstance == null){
@@ -23,7 +23,7 @@ public class MemoriaTemaRepository implements TemaRepository{
     
     //construtor garantindo que não vai ter instancia externa.
     private MemoriaTemaRepository(){
-        
+        pool = new ArrayList<>();
     }
 
     @Override
@@ -61,10 +61,10 @@ public class MemoriaTemaRepository implements TemaRepository{
         pool.add(tema);
     }
 
-    //depois ver como atualizar o tema;
     @Override
     public void atualizar(Tema tema) throws RepositoryException {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        this.remover(tema);
+	this.inserir(tema);
     }
     
     

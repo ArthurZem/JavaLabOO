@@ -39,7 +39,7 @@ public class MemoriaRodadaRepository implements RodadaRepository {
         List<Rodada> rodadalist = new ArrayList<>();
         for (Rodada rodada : pool) {
             if (rodada.getJogador() == jogador) {
-                rodadalist.add(jogador);
+                rodadalist.add(rodada);
             }
         }
         return rodadalist;
@@ -56,6 +56,8 @@ public class MemoriaRodadaRepository implements RodadaRepository {
 
     @Override
     public void atualizar(Rodada rodada) throws RepositoryException {
+        this.remover(rodada);
+        this.inserir(rodada);
 
     }
 
@@ -70,7 +72,7 @@ public class MemoriaRodadaRepository implements RodadaRepository {
 
     @Override
     public long getProximoId() {
-        return pool.size()+1;
+        return pool.size() + 1;
     }
 
 }

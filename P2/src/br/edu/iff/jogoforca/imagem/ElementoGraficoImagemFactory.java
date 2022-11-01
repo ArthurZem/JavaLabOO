@@ -7,6 +7,7 @@ import br.edu.iff.jogoforca.dominio.boneco.Boneco;
 import br.edu.iff.jogoforca.dominio.boneco.imagem.BonecoImagemFactory;
 
 public class ElementoGraficoImagemFactory implements ElementoGraficoFactory{
+    
     private static ElementoGraficoImagemFactory soleInstance = null;
     private BonecoImagemFactory bonecoimagemfactory;
     private LetraImagemFactory letraimagemfactory;

@@ -17,7 +17,7 @@ public class PalavraFactoryImpl extends EntityFactory implements PalavraFactory{
     
     public static PalavraFactoryImpl getSoleInstance() {
         if(soleInstance == null) {
-            throw new RuntimeException("N„o h· inst‚ncia criada para retornar!");
+            throw new RuntimeException("Instancia ainda n√£o foi criada!");
         }
         return soleInstance;
         

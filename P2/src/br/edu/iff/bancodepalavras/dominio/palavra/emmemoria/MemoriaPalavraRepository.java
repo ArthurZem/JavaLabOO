@@ -7,12 +7,11 @@ import br.edu.iff.repository.RepositoryException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import sun.security.ec.point.ExtendedHomogeneousPoint;
 
 public class MemoriaPalavraRepository implements PalavraRepository{
     
     private static MemoriaPalavraRepository soleInstance = null;
-    private List<Palavra> pool = new ArrayList<>();
+    private List<Palavra> pool ;
     
     
     public static MemoriaPalavraRepository getSoleInstance(){
@@ -25,7 +24,7 @@ public class MemoriaPalavraRepository implements PalavraRepository{
     
     
     private MemoriaPalavraRepository(){
-        
+        this.pool= new ArrayList<>();
     }
 
     @Override
@@ -74,10 +73,12 @@ public class MemoriaPalavraRepository implements PalavraRepository{
         }
         pool.add(palavra);
     }
-    //pensar em como pode atualizar a palavra
+    
+    
     @Override
     public void atualizar(Palavra palavra) throws RepositoryException {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        this.remover(palavra);
+        this.inserir(palavra);
     }
 
     @Override

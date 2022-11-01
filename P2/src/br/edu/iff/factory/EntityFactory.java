@@ -2,9 +2,9 @@ package br.edu.iff.factory;
 
 import br.edu.iff.repository.Repository;
 
-public abstract class EntityFactory implements Repository{
+public abstract class EntityFactory{
     
-    private Repository repository;
+    protected Repository repository;
     
     protected EntityFactory(Repository repository) {
         this.repository = repository;
@@ -14,7 +14,7 @@ public abstract class EntityFactory implements Repository{
         return repository;
     }
     
-    public long getProximoId() {
+    protected long getProximoId() {
         return repository.getProximoId();
     }
 }

@@ -9,7 +9,7 @@ import java.util.List;
 public class MemoriaJogadorRepository implements JogadorRepository {
 
     private static MemoriaJogadorRepository soleInstance = null;
-    private List<Jogador> pool = new ArrayList<>();
+    private List<Jogador> pool;
 
     public static MemoriaJogadorRepository getSoleInstance() {
         if (soleInstance == null) {
@@ -20,7 +20,7 @@ public class MemoriaJogadorRepository implements JogadorRepository {
     }
 
     private MemoriaJogadorRepository() {
-
+        pool = new ArrayList<>();
     }
 
     @Override
@@ -53,7 +53,8 @@ public class MemoriaJogadorRepository implements JogadorRepository {
 
     @Override
     public void atualizar(Jogador jogador) throws RepositoryException {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        this.remover(jogador);
+        this.inserir(jogador);
     }
 
     @Override
